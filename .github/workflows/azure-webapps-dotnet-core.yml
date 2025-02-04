@@ -76,11 +76,3 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v4
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.ASP_CORE_WEB_01_PUBLISH_PROFIL }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
